@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "bin": {
+    ".env": "./load-env.mjs"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
