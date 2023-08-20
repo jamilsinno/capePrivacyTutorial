@@ -1,2 +1,2 @@
-node/secret.js
+node/.env.js
 node/node_modules/

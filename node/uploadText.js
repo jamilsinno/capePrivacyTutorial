@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import {KEY} from './.env.js';
 
 async function run() {
-  const key = 'resume';
+  const key = 'YOUR_key_PARAMETER';
   const resp = await fetch(
     `https://api.capeprivacy.com/v1/keys/${key}/uploads/text`,
     {
@@ -12,8 +12,8 @@ async function run() {
         Authorization: `Bearer ${KEY}`
       },
       body: JSON.stringify({
-        filename: 'resume.txt',
-        content: 'This is my defence text'
+        filename: 'myfile.txt',
+        content: 'hello, world!'
       })
     }
   );

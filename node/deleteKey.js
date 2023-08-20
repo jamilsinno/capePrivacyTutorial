@@ -1,18 +1,12 @@
 import fetch from 'node-fetch';
-// import {KEY} from './.env.js';
 import {KEY} from './.env.js';
 
 async function run() {
-  const query = new URLSearchParams({
-    limit: '20',
-    offset: '0',
-    prefix: ''
-  }).toString();
-
+  const key = 'capechat-1692488088754';
   const resp = await fetch(
-    `https://api.capeprivacy.com/v1/keys?${query}`,
+    `https://api.capeprivacy.com/v1/keys/${key}`,
     {
-      method: 'GET',
+      method: 'DELETE',
       headers: {
         Authorization: `Bearer ${KEY}`
       }

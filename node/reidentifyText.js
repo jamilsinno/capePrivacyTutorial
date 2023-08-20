@@ -2,9 +2,8 @@ import fetch from 'node-fetch';
 import {KEY} from './.env.js';
 
 async function run() {
-  const key = 'resume';
   const resp = await fetch(
-    `https://api.capeprivacy.com/v1/keys/${key}/uploads/text`,
+    `https://api.capeprivacy.com/v1/privacy/reidentify/text`,
     {
       method: 'POST',
       headers: {
@@ -12,8 +11,14 @@ async function run() {
         Authorization: `Bearer ${KEY}`
       },
       body: JSON.stringify({
-        filename: 'resume.txt',
-        content: 'This is my defence text'
+        content: 'Hello, [NAME_GIVEN_1]!',
+        entities: [
+          {
+            processed_text: 'NAME_GIVEN_1',
+            text: 'Jamil',
+            best_label: 'NAME_GIVEN'
+          }
+        ]
       })
     }
   );
