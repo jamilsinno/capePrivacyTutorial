@@ -1,2 +1,4 @@
 node/.env.js
 node/node_modules/
+videoTutorial/.env.js
+videoTutorial/node_modules/

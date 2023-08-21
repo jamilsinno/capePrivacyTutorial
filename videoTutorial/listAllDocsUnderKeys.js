@@ -2,11 +2,16 @@ import fetch from 'node-fetch';
 import {KEY} from './.env.js';
 
 async function run() {
-  const key = 'resume';
+  const query = new URLSearchParams({
+    limit: '20',
+    offset: '0'
+  }).toString();
+
+  const key = 'app';
   const resp = await fetch(
-    `https://api.capeprivacy.com/v1/keys/${key}`,
+    `https://api.capeprivacy.com/v1/keys/${key}/uploads?${query}`,
     {
-      method: 'DELETE',
+      method: 'GET',
       headers: {
         Authorization: `Bearer ${KEY}`
       }
